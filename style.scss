@@ -1,0 +1,208 @@
+@import "./variables";
+
+@mixin style {
+    color: $mainText;
+    background: $backgroundText;
+    word-spacing: -0.1em;
+    font-size: 22px;
+    line-height: 1.8em;
+    font-weight: 600;
+}
+
+@mixin size {
+    width: $size;
+    height: $size;
+}
+
+@mixin flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+@mixin fontstyle {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+body {
+    background: $backgroundPage;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+.testimonial {
+    box-shadow:  2px 3px 10px;
+    height: auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 200px;
+    width: 420px;
+    border-radius: $borderRadius;
+
+    &__top {
+        background: $backgroundText;
+        padding: 30px;
+        border-top-left-radius: $borderRadius;
+        border-top-right-radius:$borderRadius;
+    
+        & p {
+            @include style;
+            height: auto;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__img {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -62px;
+        display: block;
+    }
+    
+    &__bottom {
+        background: $backgroundFooter;
+        border-bottom-left-radius: $borderRadius;
+        border-bottom-right-radius: $borderRadius;
+        padding-bottom: 30px;
+        padding-top: 60px;
+        margin-top: -65px;
+
+        & h2 {
+            text-transform: uppercase;
+            text-align: center;
+            color: $nameText;
+            letter-spacing: 0.2em;
+        }
+
+        & h3 {
+            color: $siteText;
+            text-align: center;
+        }
+    }
+}
+
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 40px;
+    margin: 50px;
+
+    &__1--img {
+        border-radius: $borderRadius;
+        width: 100%;
+        height: 100%;
+        transition-duration: 500ms;
+    &:hover{
+        opacity: 0%;
+    }
+    }   
+    &__2 {
+        text-align: center;
+        background: #262646;
+        border-radius: $borderRadius;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        bottom: 354px;
+        position: relative;     
+    &--btn {
+        background: #fff;
+        border-radius: 8px;
+        cursor: pointer;
+        height: 8%;
+        width: 30%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 0;
+        transform: translate(-50%, -50%);
+    }
+    }
+}
+
+        
+@media (max-width: 768px) {
+    .portfolio {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(4, auto);
+
+        }
+}
+
+@media (max-width: 320px) {
+    .portfolio {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(7, auto);
+    }
+}
+
+
+.social-media {
+    @include flex;
+    margin-top: 350px;
+    list-style: none;
+
+}
+
+    
+
+.fa-laptop-code{
+    @include size;
+     background:  #e17b77;
+     transition: $transition;
+     
+     &:hover {
+         width: 200px;
+    }
+    &::before {
+        content: "\f5fc";
+    }
+    
+}
+
+    
+
+.fa-facebook-f {
+    @include size;
+    background: #3b5998;
+    transition: $transition;
+    &:hover {
+        width: 200px;
+    }
+}
+
+
+
+.fa-twitter {
+    @include size;
+    background: #00aced;
+    transition: $transition;
+    &:hover {
+        width: 200px;
+    }
+}  
+
+
+
+.fa-linkedin-in {
+    @include size;
+    background: #007bb6;
+    transition: $transition;
+    &:hover {
+        width: 200px;
+    }
+}
+
+.fa-github {
+    @include size;
+    background: #333;
+    transition: $transition;
+    &:hover {
+        width: 200px;
+    }
+}
+
