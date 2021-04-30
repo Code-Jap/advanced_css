@@ -5,8 +5,8 @@ body {
 }
 
 .testimonial {
-  -webkit-box-shadow: 2px 3px 10px;
-          box-shadow: 2px 3px 10px;
+  -webkit-box-shadow: 2px 3px 20px;
+          box-shadow: 2px 3px 20px;
   height: auto;
   margin-top: 100px;
   margin-bottom: 100px;
@@ -66,22 +66,34 @@ body {
   display: grid;
   -ms-grid-columns: (300px)[3];
       grid-template-columns: repeat(3, 300px);
-  -ms-grid-rows: (auto)[3];
-      grid-template-rows: repeat(3, auto);
+  -ms-grid-rows: (350px)[3];
+      grid-template-rows: repeat(3, 350px);
   grid-gap: 40px;
   margin: 50px;
+}
+
+.portfolio__1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .portfolio__1--img {
   border-radius: 20px;
   width: 100%;
   height: 100%;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
+  -webkit-transition: opacity .5s ease, z-index 0s 0s;
+  transition: opacity .5s ease, z-index 0s 0s;
+  position: absolute;
+  z-index: 2;
+  visibility: visible;
 }
 
 .portfolio__1--img:hover {
-  opacity: 0%;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity .75s ease, z-index 0s .75s;
+  transition: opacity .75s ease, z-index 0s .75s;
 }
 
 .portfolio__2 {
@@ -90,40 +102,35 @@ body {
   border-radius: 20px;
   height: 100%;
   width: 100%;
-  z-index: -1;
-  bottom: 354px;
-  position: relative;
+  position: absolute;
 }
 
 .portfolio__2--btn {
   background: #fff;
   border-radius: 8px;
   cursor: pointer;
-  height: 8%;
-  width: 30%;
   position: absolute;
   top: 50%;
   left: 50%;
-  margin: 0;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
 
 @media (max-width: 768px) {
   .portfolio {
-    -ms-grid-columns: (auto)[2];
-        grid-template-columns: repeat(2, auto);
-    -ms-grid-rows: (auto)[4];
-        grid-template-rows: repeat(4, auto);
+    -ms-grid-columns: (300px)[2];
+        grid-template-columns: repeat(2, 300px);
+    -ms-grid-rows: (350px)[4];
+        grid-template-rows: repeat(4, 350px);
   }
 }
 
 @media (max-width: 320px) {
   .portfolio {
-    -ms-grid-columns: auto;
-        grid-template-columns: auto;
-    -ms-grid-rows: (auto)[7];
-        grid-template-rows: repeat(7, auto);
+    -ms-grid-columns: 300px;
+        grid-template-columns: 300px;
+    -ms-grid-rows: (350px)[7];
+        grid-template-rows: repeat(7, 350px);
   }
 }
 
@@ -146,8 +153,8 @@ body {
   width: 50px;
   height: 50px;
   background: #e17b77;
-  -webkit-transition: 500ms ease-in-out;
-  transition: 500ms ease-in-out;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
 }
 
 .fa-laptop-code:hover {
@@ -162,8 +169,8 @@ body {
   width: 50px;
   height: 50px;
   background: #3b5998;
-  -webkit-transition: 500ms ease-in-out;
-  transition: 500ms ease-in-out;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
 }
 
 .fa-facebook-f:hover {
@@ -174,8 +181,8 @@ body {
   width: 50px;
   height: 50px;
   background: #00aced;
-  -webkit-transition: 500ms ease-in-out;
-  transition: 500ms ease-in-out;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
 }
 
 .fa-twitter:hover {
@@ -186,8 +193,8 @@ body {
   width: 50px;
   height: 50px;
   background: #007bb6;
-  -webkit-transition: 500ms ease-in-out;
-  transition: 500ms ease-in-out;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
 }
 
 .fa-linkedin-in:hover {
@@ -198,8 +205,8 @@ body {
   width: 50px;
   height: 50px;
   background: #333;
-  -webkit-transition: 500ms ease-in-out;
-  transition: 500ms ease-in-out;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
 }
 
 .fa-github:hover {

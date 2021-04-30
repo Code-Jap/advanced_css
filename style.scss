@@ -33,7 +33,7 @@ body {
 }
 
 .testimonial {
-    box-shadow:  2px 3px 10px;
+    box-shadow:  2px 3px 20px;
     height: auto;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -87,17 +87,28 @@ body {
 .portfolio {
     display: grid;
     grid-template-columns: repeat(3, 300px);
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(3, 350px);
     grid-gap: 40px;
     margin: 50px;
 
+    &__1 {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }   
     &__1--img {
         border-radius: $borderRadius;
         width: 100%;
         height: 100%;
-        transition-duration: 500ms;
+        transition: opacity .5s ease, z-index 0s 0s;
+        position: absolute;
+        z-index: 2;
+        visibility: visible;
+        
     &:hover{
-        opacity: 0%;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity .75s ease, z-index 0s .75s;
     }
     }   
     &__2 {
@@ -106,19 +117,15 @@ body {
         border-radius: $borderRadius;
         height: 100%;
         width: 100%;
-        z-index: -1;
-        bottom: 354px;
-        position: relative;     
-    &--btn {
+        position: absolute;   
+        
+        &--btn {
         background: #fff;
         border-radius: 8px;
         cursor: pointer;
-        height: 8%;
-        width: 30%;
         position: absolute;
         top: 50%;
         left: 50%;
-        margin: 0;
         transform: translate(-50%, -50%);
     }
     }
@@ -127,16 +134,16 @@ body {
         
 @media (max-width: 768px) {
     .portfolio {
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(4, auto);
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(4, 350px);
 
         }
 }
 
 @media (max-width: 320px) {
     .portfolio {
-        grid-template-columns: auto;
-        grid-template-rows: repeat(7, auto);
+        grid-template-columns: 300px;
+        grid-template-rows: repeat(7, 350px);
     }
 }
 
@@ -145,7 +152,7 @@ body {
     @include flex;
     margin-top: 350px;
     list-style: none;
-
+    
 }
 
     
