@@ -3,19 +3,46 @@
 @mixin style {
     color: $mainText;
     background: $backgroundText;
-            word-spacing: -0.1em;
-            font-size: 22px;
-            line-height: 1.8em;
-            font-weight: 600;
+    word-spacing: -0.1em;
+    font-size: 22px;
+    line-height: 1.8em;
+    font-weight: 600;
+}
+
+@mixin size {
+    width: $size;
+    height: $size;
+}
+
+@mixin flex  {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+@mixin flex_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fontstyle {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
 }
 
 body {
     background: $backgroundPage;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
 }
 
+
+
+
 .testimonial {
-    box-shadow:  2px 3px 10px;
+    box-shadow:  2px 3px 20px;
     height: auto;
     margin-top: 100px;
     margin-bottom: 100px;
@@ -57,6 +84,7 @@ body {
             color: $nameText;
             letter-spacing: 0.2em;
         }
+
         & h3 {
             color: $siteText;
             text-align: center;
@@ -65,68 +93,146 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
 .portfolio {
     display: grid;
     grid-template-columns: repeat(3, 300px);
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(3, 350px);
     grid-gap: 40px;
     margin: 50px;
 
-    &__1--img {
-        border-radius: $borderRadius;
+    &__1 {
+        @include flex_2;
         width: 100%;
         height: 100%;
-        transition-duration: 500ms;
+        position: relative;
+        background: #262646;
+        border-radius: $borderRadius;
 
-    &:hover {
-        opacity: 0%;
-             }
-            }
-    &__1 {
-
-        &--img2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #262646;
-            border-radius: $borderRadius;
-            height: 100%;
-            width: 100%;
-            position: relative;
-            z-index: -1;
-            bottom: 375px;
-   
-
-    .portfolio__1--btn {
-        background: #fff;
-        border-radius: 8px;
+        button {
         cursor: pointer;
-        height: 8%;
-        width: 30%;
-                     }
-                }
-            }
-
         }
+    
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        
+        &--img {
+            border-radius: $borderRadius;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: 500ms;
+    
+            &:hover  {
+                opacity: 0;  
+            }
+        }   
+    }   
+}
+    
+
 @media (max-width: 768px) {
     .portfolio {
-        grid-template-columns: repeat(2, auto);
-        grid-template-rows: repeat(4, auto);
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(4, 350px);
 
         }
 }
 
 @media (max-width: 320px) {
     .portfolio {
-        grid-template-columns: auto;
-        grid-template-rows: repeat(7, auto);
+        grid-template-columns: 300px;
+        grid-template-rows: repeat(7, 350px);
     }
 }
+
+
+
+
+.social-media {
+    @include flex;
+    margin-top: 350px;
+    list-style: none;
+    cursor: grab;
+    color: #fff;
+    text-decoration: underline;
+    
+}
+
+    
+
+.fa-laptop-code{
+    @include size;
+     background:  #e17b77;
+     transition: $transition;
+     
+     &:hover {
+         width: 200px;
+         
+         
+
+    }
+    &::before {
+        content: "\f5fc";
+    }  
+    &::after {
+        margin-left: 20px;
+        content: "yes";
+    }
+}
+
+    
+.facebook {
+    @include size;
+    background: #3b5998;
+    transition: $transition;
+    &:hover {
+        width: 200px;
+    }
+    &::before {
+        content: url(images/facebook.png);
+    }
+  
+}
+
+
+
+.twitter {
+    @include size;
+    background: #00aced;
+    transition: $transition;
+    &:hover {
+        width: 200px;
+    }
+    &::after {
+    content: url(images/twitter.png);
+}
+}
+
+
+.linkedin {
+    @include size;
+    background: #007bb6;
+    transition: $transition;
+    &:hover {
+        width: 200px;
+    }
+    &::after {
+        content: url(images/linkedin.png);
+    }
+}
+
+.github {
+    @include size;
+    background: rgb(0, 0, 0);
+    transition: $transition;
+    &:hover {
+        width: 200px;
+    }
+    &::after {
+        content: url(images/github.png);
+    }
+}
+
+

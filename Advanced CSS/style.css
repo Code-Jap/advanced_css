@@ -1,11 +1,12 @@
 body {
   background: #c3cfe2;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
 }
 
 .testimonial {
-  -webkit-box-shadow: 2px 3px 10px;
-          box-shadow: 2px 3px 10px;
+  -webkit-box-shadow: 2px 3px 20px;
+          box-shadow: 2px 3px 20px;
   height: auto;
   margin-top: 100px;
   margin-bottom: 100px;
@@ -65,25 +66,13 @@ body {
   display: grid;
   -ms-grid-columns: (300px)[3];
       grid-template-columns: repeat(3, 300px);
-  -ms-grid-rows: (auto)[3];
-      grid-template-rows: repeat(3, auto);
+  -ms-grid-rows: (350px)[3];
+      grid-template-rows: repeat(3, 350px);
   grid-gap: 40px;
   margin: 50px;
 }
 
-.portfolio__1--img {
-  border-radius: 20px;
-  width: 100%;
-  height: 100%;
-  -webkit-transition-duration: 500ms;
-          transition-duration: 500ms;
-}
-
-.portfolio__1--img:hover {
-  opacity: 0%;
-}
-
-.portfolio__1--img2 {
+.portfolio__1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -93,38 +82,154 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
   background: #262646;
   border-radius: 20px;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  z-index: -1;
-  bottom: 375px;
 }
 
-.portfolio__1--img2 .portfolio__1--btn {
-  background: #fff;
-  border-radius: 8px;
+.portfolio__1 button {
   cursor: pointer;
-  height: 8%;
-  width: 30%;
+}
+
+.portfolio__1 a {
+  color: #000;
+  text-decoration: none;
+}
+
+.portfolio__1--img {
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.portfolio__1--img:hover {
+  opacity: 0;
 }
 
 @media (max-width: 768px) {
   .portfolio {
-    -ms-grid-columns: (auto)[2];
-        grid-template-columns: repeat(2, auto);
-    -ms-grid-rows: (auto)[4];
-        grid-template-rows: repeat(4, auto);
+    -ms-grid-columns: (300px)[2];
+        grid-template-columns: repeat(2, 300px);
+    -ms-grid-rows: (350px)[4];
+        grid-template-rows: repeat(4, 350px);
   }
 }
 
 @media (max-width: 320px) {
   .portfolio {
-    -ms-grid-columns: auto;
-        grid-template-columns: auto;
-    -ms-grid-rows: (auto)[7];
-        grid-template-rows: repeat(7, auto);
+    -ms-grid-columns: 300px;
+        grid-template-columns: 300px;
+    -ms-grid-rows: (350px)[7];
+        grid-template-rows: repeat(7, 350px);
   }
+}
+
+.social-media {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin-top: 350px;
+  list-style: none;
+  cursor: -webkit-grab;
+  cursor: grab;
+  color: #fff;
+  text-decoration: underline;
+}
+
+.fa-laptop-code {
+  width: 50px;
+  height: 50px;
+  background: #e17b77;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
+}
+
+.fa-laptop-code:hover {
+  width: 200px;
+}
+
+.fa-laptop-code::before {
+  content: "\f5fc";
+}
+
+.fa-laptop-code::after {
+  margin-left: 20px;
+  content: "yes";
+}
+
+.facebook {
+  width: 50px;
+  height: 50px;
+  background: #3b5998;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
+}
+
+.facebook:hover {
+  width: 200px;
+}
+
+.facebook::before {
+  content: url(images/facebook.png);
+}
+
+.twitter {
+  width: 50px;
+  height: 50px;
+  background: #00aced;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
+}
+
+.twitter:hover {
+  width: 200px;
+}
+
+.twitter::after {
+  content: url(images/twitter.png);
+}
+
+.linkedin {
+  width: 50px;
+  height: 50px;
+  background: #007bb6;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
+}
+
+.linkedin:hover {
+  width: 200px;
+}
+
+.linkedin::after {
+  content: url(images/linkedin.png);
+}
+
+.github {
+  width: 50px;
+  height: 50px;
+  background: black;
+  -webkit-transition: 500ms ease;
+  transition: 500ms ease;
+}
+
+.github:hover {
+  width: 200px;
+}
+
+.github::after {
+  content: url(images/github.png);
 }
 /*# sourceMappingURL=style.css.map */
